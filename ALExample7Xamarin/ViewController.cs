@@ -42,14 +42,8 @@ namespace ALExample7Xamarin
 			contraintSearchLabelLeading.Active = true;
 
 			/*
-			NSLayoutConstraint(item: searchLabel,
-                           attribute: .Baseline,
-                           relatedBy: .Equal,
-                           toItem: textField,
-                           attribute: .Baseline,
-                           multiplier: 1.0,
-                           constant: 0.0)
-            .active = true
+
+				Baseline entre la etiqueta y el textfield
 
 			*/
 			NSLayoutConstraint.Create(searchLabel,
@@ -59,8 +53,36 @@ namespace ALExample7Xamarin
 									  NSLayoutAttribute.Baseline,
 									  1.0f,
 									  0.0f).Active = true;
-			
 
+			/*
+
+       			Ajustamos el textfield
+			*/
+
+			NSLayoutConstraint.Create(View,
+									  NSLayoutAttribute.TrailingMargin,
+									  NSLayoutRelation.Equal,
+									  textField,
+									  NSLayoutAttribute.Trailing,
+									  1.0f,
+									  0.0f).Active = true;
+
+			NSLayoutConstraint.Create(textField,
+									  NSLayoutAttribute.Top,
+									  NSLayoutRelation.Equal,
+									  TopLayoutGuide,
+									  NSLayoutAttribute.Bottom,
+									  1.0f,
+									  0.0f).Active = true;
+
+
+			NSLayoutConstraint.Create(textField,
+									  NSLayoutAttribute.Leading,
+									  NSLayoutRelation.Equal,
+									  searchLabel,
+									  NSLayoutAttribute.Trailing,
+									  1.0f,
+									  0.0f).Active = true;
 
 
 
